@@ -69,8 +69,6 @@
             const baseSelect = $("#baseCurrencySelect");
             baseSelect.empty();
 
-            baseSelect.append(`<option value="TRY">TRY</option>`); 
-
             rates.forEach(rate => {
                 baseSelect.append(`<option value="${rate.code}">${rate.code}</option>`);
                 tbody.append(`
@@ -103,9 +101,6 @@
             const amount = parseFloat($("#amountInput").val()) || 0;
             const baseCode = $("#baseCurrencySelect").val();
             
-            if (!latestRates.find(r => r.code === "TRY")) {
-                latestRates.push({ code: "TRY", name: "Türk Lirası", buyingRate: 1, sellingRate: 1 });
-            }
 
             const baseRate = baseCode === "TRY"
                 ? 1

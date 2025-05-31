@@ -24,7 +24,16 @@ namespace TCMBKurCevirici.Application.Providers
 
             var root = JsonSerializer.Deserialize<Dictionary<string, JsonElement>>(json)!;
             var result = new List<CurrencyRate>();
-
+            if (!result.Any(r => r.Code == "TRY"))
+            {
+                result.Add(new CurrencyRate
+                {
+                    Code = "TRY",
+                    Name = "TL",
+                    BuyingRate = 1.0m,
+                    SellingRate = 1.0m
+                });
+            }
             foreach (var kvp in root)
             {
                 if (kvp.Key == "Update_Date")
