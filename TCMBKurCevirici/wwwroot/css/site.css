@@ -48,3 +48,20 @@ h2 {
     vertical-align: middle;
     text-align: center;
 }
+
+
+.table-responsive {
+    max-height: 60vh;
+    overflow-x: auto;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    border: 1px solid #dee2e6;
+}
+
+.table {
+    min-width: 600px;
+    table-layout: auto;
+    white-space: nowrap;
+}
+
+
